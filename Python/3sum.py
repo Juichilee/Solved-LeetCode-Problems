@@ -32,7 +32,11 @@ class Solution:
     # Pattern: Three Pointers (i, l, r)
                     
     ###
-    # Solve Description: First sort the nums array in ascending order. 
+    # Solve Description: First sort the nums array in ascending order. Use 3 pointers (i, l, r) for keeping track of current 
+    # 3 sum being processed. For the outer loop, track index i. To prevent duplicates, check if nums[i] == nums[i-1], skipping 
+    # if True. For the inner loop, implement Two Sum. Instantiate l next to i and r at the end of nums. While l < r, calculate
+    # the current 3 sum, incrementing l if > 0 and decrementing r if < 0. If 3 sum == 0, add to results and update l or pointer 
+    # to next non-duplicate position to keep searching. 
     ###
     
     # Link: https://leetcode.com/problems/3sum/
