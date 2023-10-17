@@ -18,7 +18,7 @@ class Twitter:
         self.followMap[userId].add(userId) # add user to own list of followers
         for followeeId in self.followMap[userId]:
             if followeeId in self.tweetMap: # check if followee has at least one tweet
-                index = len(self.tweetMap[followeeId]) - 1 # get last index o flist
+                index = len(self.tweetMap[followeeId]) - 1 # get last tweet from the followee tweet list
                 count, tweetId = self.tweetMap[followeeId][index]
                 minHeap.append([count, tweetId, followeeId, index - 1])
             heapq.heapify(minHeap)
