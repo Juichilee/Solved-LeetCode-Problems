@@ -1,14 +1,14 @@
 class Twitter:
 
     def __init__(self):
-        self.count = 0 # for python max heap sort, count decrements following a unit of time
+        self.count = 0 # for python max heap sort; tweets with higher counts is prioritized in newsfeed
         self.tweetMap = defaultdict(list)
         self.followMap = defaultdict(set)
 
     # Time Complexity: O(1) 
     def postTweet(self, userId: int, tweetId: int) -> None:
         self.tweetMap[userId].append([self.count, tweetId])
-        self.count -= 1
+        self.count -= 1 # new tweets have lower counts than previous tweets
 
     # Time Complexity: O(10 * k) k = num of followers
     def getNewsFeed(self, userId: int) -> List[int]:
